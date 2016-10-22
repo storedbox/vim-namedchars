@@ -1,7 +1,5 @@
 # Wolfram Language-compatible Named Characters
 
-## About
-
 Adds insert-mode abbreviations for Wolfram Language's named characters.
 See [Listing of Named Characters] at Wolfram's Documentation Center for more details.
 
