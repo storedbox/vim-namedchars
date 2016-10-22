@@ -9,10 +9,10 @@ See [Listing of Named Characters] at Wolfram's Documentation Center for more det
 
 ## Commands
 
-Name                   |Description
------------------------|---------------------------------------------
-:EnableNamedCharacters |Add abbreviations to the current buffer.
-:DisableNamedCharacters|Remove abbreviations from the current buffer.
+Name                     |Description
+-------------------------|---------------------------------------------
+`:EnableNamedCharacters` |Add abbreviations to the current buffer.
+`:DisableNamedCharacters`|Remove abbreviations from the current buffer.
 
 ## Autocmds:
 
