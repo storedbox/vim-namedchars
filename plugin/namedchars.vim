@@ -1057,8 +1057,8 @@ function s:RemoveNamedChars()
 endfunction
 
 
-command DisableNamedCharacters :call s:RemoveNamedChars()
-command EnableNamedCharacters :call s:AddNamedChars()
+command DisableNamedCharacters :call <sid>RemoveNamedChars()
+command EnableNamedCharacters :call <sid>AddNamedChars()
 autocmd FileType mma :EnableNamedCharacters
 
 
