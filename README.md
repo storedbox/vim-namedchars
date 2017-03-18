@@ -17,5 +17,8 @@ Name                     |Description
 Named characters are enabled for Mathematica language files by default:
 
 ```vim
-:autocmd FileType mma :EnableNamedCharacters
+:augroup namedchars
+	:autocmd!
+	:autocmd FileType mma :EnableNamedCharacters
+:augroup end
 ```
