@@ -24,12 +24,17 @@
 "   :EnableNamedCharacters  — Add abbreviations to the current buffer.
 "   :DisableNamedCharacters — Remove abbreviations from the current buffer.
 "
-" Autocmds:
+" Autocmds: In augroup namedchars
 "
 "   :autocmd FileType mma :EnableNamedCharacters
 "
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if exists('g:loaded_namedchars') && g:loaded_namedchars
+	finish
+endif
+let g:loaded_namedchars = v:true
 
 let s:cpo_save = &cpo
 set cpo&vim
@@ -1046,13 +1051,13 @@ let s:NamedChars = {
 \ }
 
 
-function s:AddNamedChars()
+function! s:AddNamedChars()
 	for l:name in keys(s:NamedChars)
 		execute 'inoreabbrev <buffer> ' . l:name . ' ' . s:NamedChars[l:name]
 	endfor
 endfunction
 
-function s:RemoveNamedChars()
+function! s:RemoveNamedChars()
 	for l:name in keys(s:NamedChars)
 		execute 'iunabbrev <buffer> ' . l:name
 	endfor
@@ -1061,7 +1066,11 @@ endfunction
 
 command -bar DisableNamedCharacters :call <sid>RemoveNamedChars()
 command -bar EnableNamedCharacters :call <sid>AddNamedChars()
-autocmd FileType mma :EnableNamedCharacters
+
+augroup namedchars
+	autocmd!
+	autocmd FileType mma :EnableNamedCharacters
+augroup end
 
 let &cpo = s:cpo_save
 unlet s:cpo_save
