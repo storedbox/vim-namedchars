@@ -4,10 +4,10 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" Version 11.0.1-r0
+" Version 11.0.1
 "
-" Copyright © 2016 David Huffman <dhuffman@linux.com>.
-" Copyright © 1988-2016 Wolfram Research, Inc.
+" Copyright © 2016-2017 David Huffman <dhuffman@linux.com>.
+" Copyright © 1988-2017 Wolfram Research, Inc.
 "
 " Distributed under the terms of the MIT license.
 "
