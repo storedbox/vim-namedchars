@@ -31,6 +31,8 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let s:cpo_save = &cpo
+set cpo&vim
 
 let s:NamedChars = {
 	\ '\[AAcute]': 'á',
@@ -1061,5 +1063,7 @@ command -bar DisableNamedCharacters :call <sid>RemoveNamedChars()
 command -bar EnableNamedCharacters :call <sid>AddNamedChars()
 autocmd FileType mma :EnableNamedCharacters
 
+let &cpo = s:cpo_save
+unlet s:cpo_save
 
 " vim: noet
